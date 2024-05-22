@@ -19,6 +19,11 @@ export const textMachine = createMachine({
             value: ({ event }) => event.value,
           }),
         },
+        "text.double": {
+          actions: assign({
+            value: ({ context }) => context.value.repeat(2),
+          }),
+        },
         "text.commit": {
           actions: assign({
             committedValue: ({ context }) => context.value,
