@@ -22,6 +22,7 @@ export const TextEditor = () => {
         }
       />
       <button onClick={() => sendText({ type: "text.double" })}>double</button>
+      <button onClick={() => sendText({ type: "text.revert" })}>revert</button>
 
       <button onClick={() => sendText({ type: "text.commit" })}>
         text commit

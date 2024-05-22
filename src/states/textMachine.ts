@@ -24,6 +24,11 @@ export const textMachine = createMachine({
             value: ({ context }) => context.value.repeat(2),
           }),
         },
+        "text.revert": {
+          actions: assign({
+            value: ({ context }) => context.committedValue,
+          }),
+        },
         "text.commit": {
           actions: assign({
             committedValue: ({ context }) => context.value,
