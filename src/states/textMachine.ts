@@ -2,8 +2,8 @@ import { assign, createMachine } from "xstate";
 
 export const textMachine = createMachine({
   context: {
-    committedValue: "commit",
-    value: "sample",
+    committedValue: "",
+    value: "",
   },
   initial: "reading",
   states: {

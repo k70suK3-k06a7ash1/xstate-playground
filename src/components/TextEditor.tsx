@@ -14,11 +14,13 @@ export const TextEditor = () => {
         text reading
       </button>
 
-      <input disabled={isEqual(textState.value.toString(), "reading")} />
+      <input
+        disabled={isEqual(textState.value.toString(), "reading")}
+        onChange={(e) =>
+          sendText({ type: "text.change", value: e.currentTarget.value })
+        }
+      />
 
-      <button onClick={() => sendText({ type: "text.change", value: "Hello" })}>
-        text change
-      </button>
       <button onClick={() => sendText({ type: "text.commit" })}>
         text commit
       </button>
