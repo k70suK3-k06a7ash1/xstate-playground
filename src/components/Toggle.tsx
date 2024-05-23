@@ -1,5 +1,5 @@
 import { useMachine } from "@xstate/react";
-import { toggleMachine } from "../states/sample";
+import { toggleMachine } from "../states/toggleMachine";
 export const Toggle = () => {
   const [state, send] = useMachine(toggleMachine);
 
