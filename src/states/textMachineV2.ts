@@ -8,10 +8,15 @@ export const textMachineV2 = setup({
       | { type: "text.change"; value: string }
       | { type: "text.double" }
       | { type: "text.revert" }
+      | { type: "text.init" }
       | { type: "text.commit" }
       | { type: "text.cancel" },
   },
   actions: {
+    init: assign({
+      value: () => "",
+      committedValue: () => "",
+    }),
     double: assign({
       value: ({ context }) => context.value.repeat(2),
     }),
@@ -39,6 +44,10 @@ export const textMachineV2 = setup({
     },
     editing: {
       on: {
+        "text.init": {
+          actions: "init",
+          target: "reading",
+        },
         "text.change": {
           actions: assign({
             value: ({ event }) => event.value,

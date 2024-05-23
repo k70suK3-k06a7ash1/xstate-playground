@@ -13,6 +13,7 @@ export const TextEditor = () => {
       <button onClick={() => sendText({ type: "text.cancel" })}>
         text reading
       </button>
+      <button onClick={() => sendText({ type: "text.init" })}>text init</button>
 
       <input
         value={textState.context.value}
