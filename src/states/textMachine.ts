@@ -1,4 +1,4 @@
-import { assign, createMachine } from "xstate";
+import { assign, createMachine, sendTo } from "xstate";
 
 export const textMachine = createMachine({
   context: {
@@ -34,6 +34,12 @@ export const textMachine = createMachine({
             committedValue: ({ context }) => context.value,
           }),
           target: "reading",
+        },
+        "text.send": {
+          actions: sendTo("childActor", ({ self }) => ({
+            type: "ping",
+            sender: self,
+          })),
         },
         "text.cancel": {
           actions: assign({
