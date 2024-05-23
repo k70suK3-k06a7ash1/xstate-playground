@@ -1,18 +1,15 @@
 import "./App.css";
-import { useMachine } from "@xstate/react";
-import { toggleMachine } from "./states/sample";
+
 import { TextEditor } from "./components/TextEditor";
+import { Title } from "./components/Title";
+import { Toggle } from "./components/Toggle";
 
 function App() {
-  const [state, send] = useMachine(toggleMachine);
-
   return (
     <>
+      <Title />
       <TextEditor />
-      <div>
-        <h1>current state is : {state.value.toString()}</h1>
-        <button onClick={() => send({ type: "toggle" })}>toggle action</button>
-      </div>
+      <Toggle />
     </>
   );
 }
