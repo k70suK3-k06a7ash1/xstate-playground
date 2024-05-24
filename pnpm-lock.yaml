@@ -8,6 +8,9 @@ dependencies:
   '@xstate/react':
     specifier: ^4.1.1
     version: 4.1.1(@types/react@18.3.2)(react@18.3.1)(xstate@5.13.0)
+  effect:
+    specifier: ^3.2.5
+    version: 3.2.5
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -1127,6 +1130,10 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /effect@3.2.5:
+    resolution: {integrity: sha512-Qs/NAX2s/ClRATbiImc4IuzzAs+1RaFzZm7zRx9NKmLFnIeCC+h2LwkrOuprG3PsDM+g1IfPEFWvVbTSDKPnFA==}
+    dev: false
 
   /electron-to-chromium@1.4.777:
     resolution: {integrity: sha512-n02NCwLJ3wexLfK/yQeqfywCblZqLcXphzmid5e8yVPdtEcida7li0A5WQKghHNG0FeOMCzeFOzEbtAh5riXFw==}

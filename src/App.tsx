@@ -1,4 +1,5 @@
 import "./App.css";
+import { Count } from "./components/Count";
 
 import { TextEditor } from "./components/TextEditor";
 import { Title } from "./components/Title";
@@ -10,6 +11,7 @@ function App() {
       <Title />
       <TextEditor />
       <Toggle />
+      <Count />
     </>
   );
 }

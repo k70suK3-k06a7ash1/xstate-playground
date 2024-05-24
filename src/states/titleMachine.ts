@@ -1,4 +1,4 @@
-import { assign, createMachine } from "xstate";
+import { createMachine, sendTo } from "xstate";
 export const titleMachine = createMachine({
   context: {
     value: "hello",
@@ -7,9 +7,9 @@ export const titleMachine = createMachine({
   states: {
     display: {
       on: {
-        "title.update": {
-          actions: assign({
-            value: ({ event }) => event.value,
+        "title.updated": {
+          actions: sendTo(({ system }) => system.get("notifier"), {
+            type: "notify",
           }),
         },
       },
